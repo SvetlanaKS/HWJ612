@@ -29,7 +29,7 @@ public class MyStatsServiceTest {
     public void shouldGetSumSales() {
         StatsService serviceTest = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int actual = serviceTest.SumSales(sales);
+        int actual = serviceTest.sumSales(sales);
         int expected = 180;
         assertEquals(expected, actual);
     }
@@ -38,7 +38,7 @@ public class MyStatsServiceTest {
     public void shouldGetAverageSales() {
         StatsService serviceTest = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int actual = serviceTest.AverageSales(sales);
+        int actual = serviceTest.averageSales(sales);
         int expected = 15;
         assertEquals(expected, actual);
     }

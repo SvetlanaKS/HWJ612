@@ -29,7 +29,7 @@ public class StatsService {
         return maxMonth + 1;
     }
 
-    public int SumSales(int[] sales) {
+    public int sumSales(int[] sales) {
         int sum = 0;
         for (int x : sales) {
 
@@ -40,21 +40,17 @@ public class StatsService {
         return sum;
     }
 
-    public int AverageSales(int[] sales) {
-        int averageSale = 0;
-        for (int x : sales) {
-            averageSale = (averageSale + x);
-        }
-        System.out.println(averageSale / sales.length);
-        return averageSale / sales.length;
+    public int averageSales(int[] sales) {
+        int sum = sumSales(sales);
+        System.out.println(sum / sales.length);
+        return sum / sales.length;
     }
 
     public int NumberMonthLessAverageSales(int[] sales) {
-        StatsService serviceAverage = new StatsService();
-        int Average = serviceAverage.AverageSales(sales);
+        int average = averageSales(sales);
         int counter = 0;
         for (int sale : sales) {
-            if (sale < Average) {
+            if (sale < average) {
                 counter++;
             }
         }
@@ -64,11 +60,10 @@ public class StatsService {
     }
 
     public int NumberMonthOverAverageSales(int[] sales) {
-        StatsService serviceAverage = new StatsService();
-        int Average = serviceAverage.AverageSales(sales);
+        int average = averageSales(sales);
         int counter = 0;
         for (int sale : sales) {
-            if (sale > Average) {
+            if (sale > average) {
                 counter++;
             }
         }
